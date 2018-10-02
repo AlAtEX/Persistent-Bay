@@ -41,7 +41,10 @@
 	set name = "Rotate"
 	set category = "Object"
 	set src in oview(1)
-
+	
+	if(!usr || !Adjacent(usr))
+		return
+	
 	if(usr.incapacitated())
 		return
 
