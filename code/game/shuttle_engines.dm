@@ -144,6 +144,13 @@
 	set name = "Rotate Clockwise"
 	set category = "Object"
 	set src in oview(1)
+	
+	if(!usr || !Adjacent(usr))
+		return
+	
+	if(usr.incapacitated())
+		return
+
 
 	if (src.anchored || usr:stat)
 		to_chat(usr, "It is fastened to the floor!")
@@ -154,7 +161,10 @@
 	set name = "Rotate Counter Clockwise"
 	set category = "Object"
 	set src in oview(1)
-
+	
+	if(!usr || !Adjacent(usr))
+		return
+	
 	if (src.anchored || usr:stat)
 		to_chat(usr, "It is fastened to the floor!")
 		return 0
