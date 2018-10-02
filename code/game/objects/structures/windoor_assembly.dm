@@ -278,7 +278,10 @@ obj/structure/windoor_assembly/Destroy()
 	set name = "Rotate Windoor Assembly"
 	set category = "Object"
 	set src in oview(1)
-
+	
+	if(!usr || !Adjacent(usr))
+		return
+	
 	if (src.anchored)
 		to_chat(usr, "It is fastened to the floor; therefore, you can't rotate it!")
 		return 0
