@@ -482,6 +482,13 @@
 	set category = "Object"
 	set src in oview(1)
 
+	if(!usr || !Adjacent(usr))
+		return
+	
+	if(usr.incapacitated())
+		return
+
+
 	if(usr.stat) return
 
 	if (src.anchored)
